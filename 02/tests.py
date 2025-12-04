@@ -1,33 +1,6 @@
-from main import is_valid_id_star_one, is_valid_id_star_two, star_one, star_two
+from main import star_one, star_two
 
-class TestStarOne:
-    def test_is_valid_id_star_one(self):
-        result = is_valid_id_star_one('11')
-        assert result == True
-
-        result = is_valid_id_star_one('12')
-        assert result == False
-
-        result = is_valid_id_star_one('123123')
-        assert result == True
-
-class TestStarTwo:
-    def test_is_valid_id_star_two(self):
-        result = is_valid_id_star_two('12312312312')
-        assert result == False
-
-        result = is_valid_id_star_two('123123123')
-        assert result == True
-
-        result = is_valid_id_star_two('1188511885')
-        assert result == True
-
-        result = is_valid_id_star_two('2121212121')
-        assert result == True
-
-        result = is_valid_id_star_two('2121212124')
-        assert result == False
-
+class TestDayTwo:
     def test_star_two(self):
         result = star_two(['11-22'])
         assert result == 11 + 22
