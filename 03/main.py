@@ -1,22 +1,21 @@
-import math
 import argparse
 
-def get_joltage(banks, number_of_batteries):
+def get_joltage(banks, num_of_batteries_to_turn_on):
     joltage = 0
 
     for bank in banks:
-        batteries = [0] * number_of_batteries
+        batteries_turned_on = [0] * num_of_batteries_to_turn_on
 
         for i, digit in enumerate(bank):
-            for j, battery in enumerate(batteries):
+            for j, digit2 in enumerate(batteries_turned_on):
                 
-                if (int(digit) > int(battery) and i <= len(bank) - (len(batteries) - j)):
-                    batteries[j] = digit
-                    for k in range(j + 1, len(batteries)):
-                        batteries[k] = 0
+                if (int(digit) > int(digit2) and i <= len(bank) - (len(batteries_turned_on) - j)):
+                    batteries_turned_on[j] = digit
+                    for k in range(j + 1, len(batteries_turned_on)):
+                        batteries_turned_on[k] = 0
                     break
 
-        joltage += int("".join(batteries))
+        joltage += int("".join(batteries_turned_on))
 
     return joltage
 
