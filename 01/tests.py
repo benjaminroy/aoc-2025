@@ -1,6 +1,6 @@
 from main import star_one, star_two
 
-class TestStarTwo:
+class TestDayOne:
     def test_star_two(self):
         result = star_two(['R49'])
         assert result == 0
